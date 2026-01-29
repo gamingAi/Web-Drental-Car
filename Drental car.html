@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drental Car - Sewa Mobil Terpercaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #7C2D12;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: #7C2D12;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar-logo {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .navbar-links a:hover {
+            background-color: #F97316;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-flex {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        } 
+
+        .content-flex > div {
+            flex: 1;
+        }
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .content-about {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ff8c00;
+            border-radius: 10px;
+            
+            color: white;
+        }
+        .content-about img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            
+        }
+        .content-about .content-flex {
+            flex-direction: row-reverse;
+        } 
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #7C2D12;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #7C2D12;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 15px;
+            background-color: #F97316;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #7C2D12;
+        }
+
+        .fa {
+            color: #F97316;
+        }
+
+        @media (max-width: 768px) {
+            .content-flex {
+                flex-direction: column;
+            }
+
+            .navbar-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #F97316;
+            color: white;
+        }
+
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            gap: 20px;
+            justify-items: center;
+        }
+        .price-card {
+            background-color: white;
+            border: 2px solid #FDBA74;
+            border-radius: 8px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(124, 45, 18, 0.1);
+        }
+
+        .price-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .price-card .price {
+            font-size: 20px;
+            color: #F97316;
+            margin: 10px 0;
+        }
+        .footer {
+            background: #F97316;
+            color: white;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            gap: 60px;
+        }
+
+    
+        .footer-col {
+            flex: 1;
+        }
+
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+
+       
+        .footer-text {
+            line-height: 1.6;
+        }
+
+     
+        .footer-title {
+            margin-bottom: 10px;
+        }
+
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+    
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        
+        .footer-links a.active {
+            color: #FDBA74;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: left;
+            }
+        }
+        .maps {
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            height: 200px;
+        }
+
+        .content .contact {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        .iamgecs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-nav">
+            <a href="index.html" class="navbar-logo">Drental Car</a>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#pricelist">Price List</a></li>
+                <li><a href="#contact">CS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content" id="home">
+        <div class="content-flex">
+            <div>
+                <img src="carimage1.jpg" alt="Car Image">
+            </div>
+            <div>
+                <h1>Sewa Mobil Mudah & Cepat – Harga Terjangkau Setiap Hari</h1>
+                <p>Butuh mobil buat jalan-jalan, kerja, atau acara keluarga? Di sini tersedia berbagai pilihan mobil yang siap dipakai kapan aja. Proses gampang, harga jelas.</p>
+                <p>Your one-stop solution for all car rental needs.</p>
+                <button class="btn" onclick="document.location='#galeri'">Lihat Armada</button>
+                <button class="btn" onclick="openBookingForm()">Booking <i class="fa fa-whatsapp" style="font-size: 18px; color:rgb(0, 255, 85)"></i></button>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="content-about" id="about">
+        <div class="content-flex">
+            <div>
+                <img src="logo about.jpg" alt="About Image">
+            </div>
+            <div >
+                 <h2>About Us</h2>
+                <p>Kami adalah penyedia layanan rental mobil terpercaya dengan pengalaman bertahun-tahun melayani pelanggan. Kami menawarkan berbagai pilihan kendaraan berkualitas dengan harga yang kompetitif dan pelayanan terbaik.</p>
+                <p>Kepuasan pelanggan adalah prioritas utama kami dalam setiap transaksi.</p> 
+            </div>
+        </div>
+    </div>
+    <div class="content" id="galeri">
+        <h2>Galeri</h2>
+        <div class="cards-container">
+            <div class="price-card">
+                <img src="carimage1.jpg" alt="Car Image 1">
+            </div>
+            <div class="price-card">
+                <img src="carimage2.jpg" alt="Car Image 2">
+            </div>
+            <div class="price-card">
+                <img src="carimage3.jpg" alt="Car Image 3">
+            </div>
+            <div class="price-card">
+                <img src="carimage4.jpg" alt="Car Image 4">
+            </div>
+            <div class="price-card">
+                <img src="carimage5.jpg" alt="Car Image 5">
+            </div>
+            <div class="price-card">
+                <img src="carimage6.jpg" alt="Car Image 6">
+            </div>
+        </div>
+    </div>
+
+        <div class="content" id="pricelist">
+            <h2>Price List</h2>
+            <p style="text-align: center;">Berikut adalah daftar harga sewa mobil kami:</p>
+            
+            <h3 style="text-align: center;">Harian</h3>
+            <br>
+            <div class="cards-container">
+                <div class="price-card">
+                    <img src="carimage1.jpg" alt="Toyota">
+                    <h4>Toyota</h4>
+                    <p class="price">Rp.500.000</p>
+                    <p class="duration">1 Hari</p>
+                     <button class="btn" onclick="booking('Toyota', 'Rp.500.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage2.jpg" alt="Honda">
+                    <h4>Honda</h4>
+                    <p class="price">Rp.550.000</p>
+                    <p class="duration">1 Hari</p>
+                   <button class="btn" onclick="booking('Honda', 'Rp.550.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage3.jpg" alt="Nissan">
+                    <h4>Nissan</h4>
+                    <p class="price">Rp.550.000</p>
+                    <p class="duration">1 Hari</p>
+                   <button class="btn" onclick="booking('Nissan', 'Rp.550.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage4.jpg" alt="Wuling">
+                    <h4>Wuling</h4>
+                    <p class="price">Rp.550.000</p>
+                    <p class="duration">1 Hari</p>
+                    <button class="btn" onclick="booking('Wuling', 'Rp.550.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage5.jpg" alt="Camry">
+                    <h4>Camry</h4>
+                    <p class="price">Rp.600.000</p>
+                    <p class="duration">1 Hari</p>
+                    <button class="btn" onclick="booking('Camry', 'Rp.600.000')">Booking</button>
+                </div>  
+                <div class="price-card">
+                    <img src="carimage6.jpg" alt="Accord">
+                    <h4>Accord</h4>
+                    <p class="price">Rp.60.000</p>
+                    <p class="duration">1 Jam</p>
+                    <button class="btn" onclick="booking('Accord', 'Rp.600.000')">Booking</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h3 style="text-align: center;">Per Jam</h3>
+            <br>
+            <div class="cards-container">
+                <div class="price-card">
+                    <img src="carimage1.jpg" alt="Toyota">
+                    <h4>Toyota</h4>
+                    <p class="price">Rp.50.000</p>
+                    <p class="duration">1 Jam</p>
+                    <button class="btn" onclick="booking('Toyota', 'Rp.50.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage2.jpg" alt="Honda">
+                    <h4>Honda</h4>
+                    <p class="price">Rp.60.000</p>
+                    <p class="duration">1 Jam</p>
+                    <button class="btn" onclick="booking('Honda', 'Rp.60.000')">Booking</button>
+
+                </div>
+                <div class="price-card">
+                    <img src="carimage3.jpg" alt="Nissan">
+                    <h4>Nissan</h4>
+                    <p class="price">Rp.60.000</p>
+                    <p class="duration">1 Jam</p>
+                        <button class="btn" onclick="booking('Nissan', 'Rp.60.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage4.jpg" alt="Wuling">
+                    <h4>Wuling</h4>
+                    <p class="price">Rp.60.000</p>
+                    <p class="duration">1 Jam</p>
+                    <button class="btn" onclick="booking('Wuling', 'Rp.60.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage5.jpg" alt="Camry">
+                    <h4>Camry</h4>
+                    <p class="price">Rp.60.000</p>
+                    <p class="duration">1 Jam</p>
+                    <button class="btn" onclick="booking('Camry', 'Rp.60.000')">Booking</button>
+                </div>
+                <div class="price-card">
+                    <img src="carimage6.jpg" alt="Camry">
+                    <h4>Accord </h4>
+                    <p class="price">Rp.60.000</p>
+                    <p class="duration">1 Jam</p>
+                    <button class="btn" onclick="booking('Accord', 'Rp.60.000')">Booking</button>
+                </div>
+            </div>
+            <br>
+            <br>
+        <p style="text-align: center;">Harga belum termasuk asuransi dan layanan antar-jemput.</p>
+        <p style="text-align: center; color: red;">Note: Harga dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.</p>
+    </div>
+
+    <div class="content">
+        <div class="contact">
+        <h2 id="contact">Customer Service</h2>
+        <h5>DIMAS SATRIYO PANGESTU</h5>
+        <div class="iamgecs">
+            <img src="fotocs.jpg" alt="Contact Image" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover; margin-bottom: 20px;">
+        </div>
+          <p>Untuk informasi lebih lanjut atau pertanyaan, silakan hubungi kami melalui:</p>
+          <button class="btn" onclick="customerServiceForm()"> Customer Service <i class="fa fa-whatsapp" style="font-size: 18px; color:rgb(0, 255, 85)"></i></button>
+           
+        </div>
+        
+    </div>  
+
+    <footer class="footer">
+    <div class="footer-container">
+
+
+        <div class="footer-col">
+            <h3 class="footer-title">Laman</h3>
+
+            <ul class="footer-links">
+                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Pricelist</a></li>
+                <li><a href="#">Galeri Mobil</a></li>
+                <li><a href="#">cs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3 class="footer-title">Kontak</h3>
+
+            <p>📱 088181213123212213</p>
+            <p>📞 088181213123212213</p>
+            <p>📍 jakarta</p>
+            <p>📍 Depok</p>
+        </div>
+
+          <div class="footer-col" >
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3120006056547!2d106.84022137402698!3d-6.353640862156637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec4747851d1b%3A0x489fc8390287fd2e!2sDepok%2C%20Tugu%2C%20Kec.%20Cimanggis%2C%20Kota%20Depok%2C%20Jawa%20Barat%2016451!5e0!3m2!1sid!2sid!4v1765446833367!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+        </div>
+
+
+    </div>
+</footer>
+
+            <script>
+                function openBookingForm() {
+                    const name = prompt("Masukkan nama Anda:");
+                    if (name) {
+                        const message = `Halo, saya ${name} ingin memesan mobil rental.`;
+                        const whatsappUrl = `https://wa.me/6281775001516?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                    }
+                }
+            </script>
+    <script>
+            function booking(mobil, harga) {
+            alert("Anda akan diarahkan ke WhatsApp untuk memesan: " + mobil + " (" + harga + ")");
+
+            const nomor = "6281775001516";
+
+    
+            const pesan = `Halo, saya ingin booking mobil ${mobil} dengan harga ${harga}. Apakah masih tersedia?`;
+
+                const waUrl = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+             window.location.href = waUrl;
+            }
+    </script>
+    
+    <script>
+        function customerServiceForm() {
+            const name = prompt("Masukkan nama Anda:");
+            const issue = prompt("Silakan jelaskan kendala atau pertanyaan Anda:");
+            if (name) {
+                const message = `Halo, saya ${name} ingin memberitahu mobil memiliki kendala: ${issue}. Mohon bantuannya.`;
+                
+                const whatsappUrl = `https://wa.me/6281775001516?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+    </script>
+
+</body> 
+</html>
